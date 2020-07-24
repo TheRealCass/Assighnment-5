@@ -1,17 +1,34 @@
 class Heap {
     
     private Patient[] heap;
-    private int heapSize;
+    private int length;
+    private int maxSize;
 
     Heap () {
-        heap = new Patient[100];
-        heapSize = 0;
+        maxSize = 100;
+        heap = new Patient[maxSize];
+        length = 0;
     }
 
-    getleftChild (int index) {
-
+    public int getleftChild (int parent) {
+        return (2 * parent) + 1;
     }
 
+    public int getRightChild (int parent) {
+        return (2 * parent) + 2;
+    }
+
+    public int getParent (int index) {
+        return (index - 1) / 2;
+    }
+
+    public boolean isEmpty () {
+        return length == 0;
+    }
+
+    public boolean isFull () {
+        return length + 1 == maxSize;
+    }
     
 
 }
