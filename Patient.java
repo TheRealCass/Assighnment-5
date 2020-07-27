@@ -26,7 +26,9 @@ class Patient implements Comparable {
     }
 
 
-
+    /**
+     * @return (String) the content of the the patient
+     */
     public String toString () {
         String toReturn = "";
         toReturn += "number: " + patientNum + " ";
@@ -35,6 +37,12 @@ class Patient implements Comparable {
         return toReturn;
     }
 
+    /**
+     * comparable interface:
+     * inspects urgency of other patient
+     * is same returns 0, if other patient has greater urgerncy
+     * returns -1, and returns 1 if other patient has lower urgrncy
+     */
     @Override
     public int compareTo(Object o) {
         Patient other = (Patient) o;

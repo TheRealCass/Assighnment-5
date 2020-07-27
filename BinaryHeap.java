@@ -151,9 +151,9 @@ class BinaryHeap {
         heap[i] = temp;
     }
 
-    /**
-     * @return (patient) the root of the bianry heap
-     */
+    
+    //****Getters & Setters****
+
     public Patient getRoot () {
         return heap[0];
     }
