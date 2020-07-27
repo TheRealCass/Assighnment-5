@@ -26,6 +26,27 @@ class Patient implements Comparable {
     }
 
 
+
+    public String toString () {
+        String toReturn = "";
+        toReturn += "number: " + patientNum + " ";
+        toReturn += ", urgerncy: " + urgency + " ";
+        toReturn += ", treatemnt time: " + treatementTime + ".";
+        return toReturn;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Patient other = (Patient) o;
+        if (getUrgency() > other.getUrgency()) {
+            return 1;
+        } else if (getUrgency() < other.getUrgency()) {
+            return -1;
+        }
+        return 0;
+    }
+
+
     //****Getters & Setters****
 
     public void setPatientNum (int patientNum) {
@@ -52,22 +73,5 @@ class Patient implements Comparable {
         return treatementTime;
     }
 
-    public String toString () {
-        String toReturn = "";
-        toReturn += "number: " + patientNum + " ";
-        toReturn += "urgerncy: " + urgency + " ";
-        toReturn += "treatemnt time: " + treatementTime + " ";
-        return toReturn;
-    }
-
-    @Override
-    public int compareTo(Object o) {
-        Patient other = (Patient) o;
-        if (getUrgency() > other.getUrgency()) {
-            return 1;
-        } else if (getUrgency() < other.getUrgency()) {
-            return -1;
-        }
-        return 0;
-    }
+    
 }
